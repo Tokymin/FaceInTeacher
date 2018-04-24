@@ -107,10 +107,10 @@ public class DownloadAsyncTask5 extends AsyncTask<String, Void, byte[]> implemen
 
     public ArrayList<HashMap<String, Object>> getData() throws JSONException {
 
-        if(which==1){//代表已签
+        if(which==0){//代表已签
             JSONObject jsonObject=new JSONObject(jsonStr);
             Pattern p=Pattern.compile("\\\\");
-            Matcher m=p.matcher(jsonObject.getString("notSign"));
+            Matcher m=p.matcher(jsonObject.getString("hasSign"));
             JSONArray jsonArray=new JSONArray(m.replaceAll(""));
             Log.e("HomeFrnightoo1",m.replaceAll(""));
             Log.e("HomeFrnightoo", "什么鬼1::" + jsonArray.length());
@@ -136,10 +136,10 @@ public class DownloadAsyncTask5 extends AsyncTask<String, Void, byte[]> implemen
                 map.put("sign_time", sign_time);
                 dlist.add(map);
             }
-        }else if(which==0){
+        }else if(which==1){
             JSONObject jsonObject=new JSONObject(jsonStr);
             Pattern p=Pattern.compile("\\\\");
-            Matcher m=p.matcher(jsonObject.getString("hasSign"));
+            Matcher m=p.matcher(jsonObject.getString("notSign"));
             JSONArray jsonArray=new JSONArray(m.replaceAll(""));
             Log.e("HomeFrnightoo2",m.replaceAll(""));
             Log.e("HomeFrnightoo", "什么鬼1::" + jsonArray.length());
