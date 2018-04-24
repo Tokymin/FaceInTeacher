@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="white">#fffefe</color>
+    <color name="radio">#d1e9fb</color>
+    <color name="transparent">#00796868</color>
+    <color name="action_bar_black_title_1f1f1f">#1f1f1f</color>
+    <color name="yell2">#FFF47E00</color>
+    <color name="background">#FFFFFF</color>
+    <color name="split_line">#11112233</color>
+    <color name="text1">#59B29C</color>
+    <color name="text2">#333333</color>
+    <color name="text3">#3300FF</color>
+</resources>

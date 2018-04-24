@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="www.geekteam.xin.faceinteacher.Activity.DetailSignInActivity">
+
+    <android.support.v7.widget.Toolbar
+        app:title="签到详情"
+        android:id="@+id/toolbar3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <RadioGroup
+            android:id="@+id/radioGroup"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/radio"
+            android:clickable="true"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="3dp">
+
+            <RadioButton
+
+                android:id="@+id/rb_yiqian"
+                style="@style/RadioButtonStyle"
+                android:layout_width="20dp"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:drawableTop="@drawable/radiobt_1"
+                android:text="已签到学生"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="18sp" />
+
+            <RadioButton
+                android:id="@+id/rb_weiqian"
+                style="@style/RadioButtonStyle"
+                android:drawableTop="@drawable/radiobt_2"
+                android:text="未签到学生"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="18sp" />
+
+
+        </RadioGroup>
+
+
+    </LinearLayout>
+
+    <www.geekteam.xin.faceinteacher.view.XListView
+        android:id="@+id/ListView_student"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp"
+        android:cacheColorHint="#00000000"
+        android:dashGap="3dp"
+        android:dashWidth="5dp"
+        android:divider="#00000000"
+        android:dividerHeight="1.5px"
+        android:fadingEdge="none"
+        tools:layout_editor_absoluteX="394dp"
+        tools:layout_editor_absoluteY="10dp">
+
+    </www.geekteam.xin.faceinteacher.view.XListView>
+
+</LinearLayout>

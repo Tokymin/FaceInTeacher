@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/list_corner_round_bg"
+    android:orientation="horizontal" >
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/dp_10"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/heart" />
+
+        <CheckBox
+            android:clickable="false"
+            android:focusable="false"
+            android:id="@+id/xuanke_radio1"
+            android:layout_marginTop="30dp"
+            style="@style/CustomCheckBoxTheme"
+            android:layout_width="20dp"
+            android:layout_height="20dp" />
+
+        <TextView
+            android:id="@+id/secret"
+            android:layout_width="5dp"
+            android:layout_height="5dp"
+            android:visibility="invisible" />
+
+        <TextView
+            android:id="@+id/chooseid"
+            android:layout_width="5dp"
+            android:layout_height="5dp"
+            android:visibility="invisible" />
+
+        <TextView
+            android:id="@+id/today_jieci2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="第1-2节"
+
+            android:textColor="@color/action_bar_black_title_1f1f1f"
+            android:textSize="18sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/today_name2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_marginTop="@dimen/dp_10"
+                android:text="Linux系统编程"
+                android:textAlignment="center"
+                android:textColor="@color/action_bar_black_title_1f1f1f"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/today_addr2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="@dimen/dp_10"
+                android:text="二教510"
+                android:textAlignment="center"
+                android:textColor="@color/action_bar_black_title_1f1f1f"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+</RelativeLayout>

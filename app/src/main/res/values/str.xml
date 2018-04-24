@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="company">
+        <item>1分钟</item>
+        <item>2分钟</item>
+        <item>3分钟</item>
+    </string-array>
+</resources>
+
