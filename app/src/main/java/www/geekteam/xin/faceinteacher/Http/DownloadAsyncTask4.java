@@ -1,4 +1,4 @@
-package www.geekteam.xin.faceinteacher.getdata;
+package www.geekteam.xin.faceinteacher.Http;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -26,13 +26,11 @@ import java.util.List;
 
 import www.geekteam.xin.faceinteacher.Activity.DetailSignInActivity;
 import www.geekteam.xin.faceinteacher.R;
-import www.geekteam.xin.faceinteacher.Sigin.CourseListActivity;
-import www.geekteam.xin.faceinteacher.Sigin.MyClenderActivity;
 import www.geekteam.xin.faceinteacher.bean.Course;
 import www.geekteam.xin.faceinteacher.view.XListView3;
 
-import static www.geekteam.xin.faceinteacher.Sigin.MyClenderActivity.mAdapter3;
-import static www.geekteam.xin.faceinteacher.Sigin.MyClenderActivity.mListView3;
+import static www.geekteam.xin.faceinteacher.Activity.MyClenderActivity.mAdapter3;
+import static www.geekteam.xin.faceinteacher.Activity.MyClenderActivity.mListView3;
 
 
 public class DownloadAsyncTask4 extends AsyncTask<String, Void, byte[]> implements XListView3.IXListViewListener {
@@ -101,7 +99,7 @@ public class DownloadAsyncTask4 extends AsyncTask<String, Void, byte[]> implemen
                         TextView tv_chooseid = (TextView) view.findViewById(R.id.chooseid1);
                         String time = tv_jieci.getText().toString();//总的天数
                         String chooseid = tv_chooseid.getText().toString();
-//                        new CourseListActivity().getdata(chooseid, time);
+//                        new DiandaoActivity().getdata(chooseid, time);
 //                          new MyClenderActivity().getdata(chooseid,time);
                         Intent i1=new Intent(context, DetailSignInActivity.class);
                         i1.putExtra("chooseid",chooseid);

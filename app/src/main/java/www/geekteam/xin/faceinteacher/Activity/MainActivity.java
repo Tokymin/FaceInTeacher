@@ -1,6 +1,5 @@
-package www.geekteam.xin.faceinteacher;
+package www.geekteam.xin.faceinteacher.Activity;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -14,6 +13,7 @@ import android.widget.ImageView;
 import android.widget.SimpleAdapter;
 import android.widget.TextClock;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,12 +21,11 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
-import www.geekteam.xin.faceinteacher.Sigin.CourseListActivity;
+import www.geekteam.xin.faceinteacher.R;
 
-import www.geekteam.xin.faceinteacher.Sigin.MyClenderActivity;
 import www.geekteam.xin.faceinteacher.bean.Course;
-import www.geekteam.xin.faceinteacher.getdata.DownloadAsyncTask;
-import www.geekteam.xin.faceinteacher.getdata.MyJsonUtils;
+import www.geekteam.xin.faceinteacher.Http.DownloadAsyncTask;
+import www.geekteam.xin.faceinteacher.Http.MyJsonUtils;
 import www.geekteam.xin.faceinteacher.view.XListView;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
@@ -182,13 +181,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (v.getId()) {
             case R.id.bt_diandao:
             case R.id.iv_diandao:
-                Intent i1 = new Intent(MainActivity.this, CourseListActivity.class);
+                Intent i1 = new Intent(MainActivity.this, DiandaoActivity.class);
                 startActivity(i1);
                 break;
             case R.id.bt_histroy:
             case R.id.iv_history:
                 Intent i2 = new Intent(MainActivity.this, MyClenderActivity.class);
                 startActivity(i2);
+                break;
+            case R.id.bt_lookdetail:
+            case R.id.iv_lookdetail:
+                Intent i3 = new Intent(MainActivity.this, StatisticsActivity.class);
+                startActivity(i3);
+                break;
+            case R.id.bt_more:
+            case R.id.iv_more:
+                Toast.makeText(this, "更多功能尚在开发中...", Toast.LENGTH_SHORT).show();
                 break;
         }
     }

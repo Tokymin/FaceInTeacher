@@ -1,15 +1,13 @@
-package www.geekteam.xin.faceinteacher.getdata;
+package www.geekteam.xin.faceinteacher.Http;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
-import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.SimpleAdapter;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import org.json.JSONArray;
@@ -17,27 +15,20 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Collections;
-import java.util.Comparator;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import www.geekteam.xin.faceinteacher.Activity.DetailSignInActivity;
 import www.geekteam.xin.faceinteacher.R;
-import www.geekteam.xin.faceinteacher.Sigin.MyClenderActivity;
-import www.geekteam.xin.faceinteacher.bean.Course;
 import www.geekteam.xin.faceinteacher.bean.Student;
 import www.geekteam.xin.faceinteacher.view.XListView;
-import www.geekteam.xin.faceinteacher.view.XListView3;
 
 import static www.geekteam.xin.faceinteacher.Activity.DetailSignInActivity.mAdapter4;
 import static www.geekteam.xin.faceinteacher.Activity.DetailSignInActivity.mListView4;
-import static www.geekteam.xin.faceinteacher.Sigin.MyClenderActivity.mAdapter3;
-import static www.geekteam.xin.faceinteacher.Sigin.MyClenderActivity.mListView3;
+import static www.geekteam.xin.faceinteacher.Activity.MyClenderActivity.mAdapter3;
+import static www.geekteam.xin.faceinteacher.Activity.MyClenderActivity.mListView3;
 
 
 public class DownloadAsyncTask5 extends AsyncTask<String, Void, byte[]> implements XListView.IXListViewListener {
@@ -116,38 +107,13 @@ public class DownloadAsyncTask5 extends AsyncTask<String, Void, byte[]> implemen
 
     public ArrayList<HashMap<String, Object>> getData() throws JSONException {
 
-        if(which==0){//代表已签
+        if(which==1){//代表已签
             JSONObject jsonObject=new JSONObject(jsonStr);
             Pattern p=Pattern.compile("\\\\");
             Matcher m=p.matcher(jsonObject.getString("notSign"));
             JSONArray jsonArray=new JSONArray(m.replaceAll(""));
-
-            Log.e("HomeFrnight", "什么鬼1::" + jsonArray.length());
-            dlist = new ArrayList<HashMap<String, Object>>();
-            if (jsonArray.length()==0) {
-                HashMap<String, Object> map = new HashMap<String, Object>();
-                map.put("stu_id", " ");
-                map.put("stu_name", '\n'+" ");
-                dlist.add(map);
-            }
-            for (int i = 0; i < jsonArray.length(); i++) {
-                JSONObject obj2 = jsonArray.optJSONObject(i);
-                Log.e("HomeFrnight", "不知道是否" + 1);
-                String stu_id = obj2.optString("stu_id");
-                Log.e("HomeFrnight", "不知道是否" + stu_id);
-                String stu_name = obj2.optString("stu_name");
-                Log.e("HomeFrnight", "不知道是否" + stu_name);
-                String sign_time = obj2.optString("sign_time");
-                LinkedHashMap<String, Object> map = new LinkedHashMap<String, Object>();
-                map.put("stu_id", stu_id);
-                map.put("stu_name", stu_name);
-                dlist.add(map);
-            }
-        }else{
-            JSONObject jsonObject=new JSONObject(jsonStr);
-            JSONArray jsonArray=new JSONArray(jsonObject.getString("hasSign"));
-
-            Log.e("HomeFrnight", "什么鬼1::" + jsonArray.length());
+            Log.e("HomeFrnightoo1",m.replaceAll(""));
+            Log.e("HomeFrnightoo", "什么鬼1::" + jsonArray.length());
             dlist = new ArrayList<HashMap<String, Object>>();
             if (jsonArray.length()==0) {
                 HashMap<String, Object> map = new HashMap<String, Object>();
@@ -158,16 +124,42 @@ public class DownloadAsyncTask5 extends AsyncTask<String, Void, byte[]> implemen
             }
             for (int i = 0; i < jsonArray.length(); i++) {
                 JSONObject obj2 = jsonArray.optJSONObject(i);
-                Log.e("HomeFrnight", "不知道是否" + 1);
-                String stu_id = obj2.optString("stu_id");
-                Log.e("HomeFrnight", "不知道是否" + stu_id);
-                String stu_name = obj2.optString("stu_name");
-                Log.e("HomeFrnight", "不知道是否" + stu_name);
+                Log.e("HomeFrnightoo", "不知道是否" + 1);
+                String stu_id = obj2.optString("s_id");
+                Log.e("HomeFrnightoo", "不知道是否" + stu_id);
+                String stu_name = obj2.optString("s_name");
+                Log.e("HomeFrnightoo", "不知道是否" + stu_name);
                 String sign_time = obj2.optString("sign_time");
                 LinkedHashMap<String, Object> map = new LinkedHashMap<String, Object>();
                 map.put("stu_id", stu_id);
                 map.put("stu_name", stu_name);
                 map.put("sign_time", sign_time);
+                dlist.add(map);
+            }
+        }else if(which==0){
+            JSONObject jsonObject=new JSONObject(jsonStr);
+            Pattern p=Pattern.compile("\\\\");
+            Matcher m=p.matcher(jsonObject.getString("hasSign"));
+            JSONArray jsonArray=new JSONArray(m.replaceAll(""));
+            Log.e("HomeFrnightoo2",m.replaceAll(""));
+            Log.e("HomeFrnightoo", "什么鬼1::" + jsonArray.length());
+            dlist = new ArrayList<HashMap<String, Object>>();
+            if (jsonArray.length()==0) {
+                HashMap<String, Object> map = new HashMap<String, Object>();
+                map.put("stu_id", " ");
+                map.put("stu_name", '\n'+" ");
+                dlist.add(map);
+            }
+            for (int i = 0; i < jsonArray.length(); i++) {
+                JSONObject obj2 = jsonArray.optJSONObject(i);
+                Log.e("HomeFrnightoo", "不知道是否" + 1);
+                String stu_id = obj2.optString("s_id");
+                Log.e("HomeFrnightoo", "不知道是否" + stu_id);
+                String stu_name = obj2.optString("s_name");
+                Log.e("HomeFrnightoo", "不知道是否" + stu_name);
+                HashMap<String, Object> map = new HashMap<String, Object>();
+                map.put("stu_id", stu_id);
+                map.put("stu_name", stu_name);
                 dlist.add(map);
             }
         }

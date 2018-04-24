@@ -1,6 +1,4 @@
-package www.geekteam.xin.faceinteacher.getdata;
-
-import android.util.Log;
+package www.geekteam.xin.faceinteacher.Http;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -9,7 +7,6 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
-import www.geekteam.xin.faceinteacher.bean.Course;
 import www.geekteam.xin.faceinteacher.bean.Student;
 
 //解析json的工具类

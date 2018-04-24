@@ -1,4 +1,4 @@
-package www.geekteam.xin.faceinteacher;
+package www.geekteam.xin.faceinteacher.adapter;
 
 
 
@@ -10,8 +10,12 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import junit.framework.Test;
+
 import java.util.List;
 
+import www.geekteam.xin.faceinteacher.Activity.MainActivity;
+import www.geekteam.xin.faceinteacher.R;
 import www.geekteam.xin.faceinteacher.bean.Course;
 
 /**

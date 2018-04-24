@@ -1,4 +1,4 @@
-package www.geekteam.xin.faceinteacher;
+package www.geekteam.xin.faceinteacher.bean;
 
 /**
  * Created by PC on 2018/4/20.

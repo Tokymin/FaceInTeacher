@@ -1,6 +1,6 @@
 package www.geekteam.xin.faceinteacher.bean;
 
-import static www.geekteam.xin.faceinteacher.RegisterActivity.name;
+import static www.geekteam.xin.faceinteacher.Activity.RegisterActivity.name;
 
 /**
  * Created by Toky on 2018/4/23.

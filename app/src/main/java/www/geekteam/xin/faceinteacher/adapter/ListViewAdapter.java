@@ -1,4 +1,4 @@
-package www.geekteam.xin.faceinteacher;
+package www.geekteam.xin.faceinteacher.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -8,6 +8,9 @@ import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
 import java.util.List;
+
+import www.geekteam.xin.faceinteacher.R;
+import www.geekteam.xin.faceinteacher.bean.Tongji;
 
 /**
  * Created by PC on 2018/4/20.

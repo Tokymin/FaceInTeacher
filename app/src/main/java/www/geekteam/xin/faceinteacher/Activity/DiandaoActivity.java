@@ -1,19 +1,14 @@
-package www.geekteam.xin.faceinteacher.Sigin;
+package www.geekteam.xin.faceinteacher.Activity;
 
 import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 
 import android.os.Handler;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.Button;
-import android.widget.CheckBox;
-import android.widget.ListView;
-import android.widget.RadioGroup;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -24,14 +19,12 @@ import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
-import www.geekteam.xin.faceinteacher.ListViewAdapter;
-import www.geekteam.xin.faceinteacher.LoginActivity;
 import www.geekteam.xin.faceinteacher.R;
+import www.geekteam.xin.faceinteacher.Utils.CustomDatePicker;
 import www.geekteam.xin.faceinteacher.bean.Course;
-import www.geekteam.xin.faceinteacher.getdata.DownloadAsyncTask;
-import www.geekteam.xin.faceinteacher.getdata.DownloadAsyncTask2;
-import www.geekteam.xin.faceinteacher.getdata.DownloadAsyncTask3;
-import www.geekteam.xin.faceinteacher.getdata.MyJsonUtils;
+import www.geekteam.xin.faceinteacher.Http.DownloadAsyncTask2;
+import www.geekteam.xin.faceinteacher.Http.DownloadAsyncTask3;
+import www.geekteam.xin.faceinteacher.Http.MyJsonUtils;
 
 import www.geekteam.xin.faceinteacher.view.XListView2;
 
@@ -39,7 +32,7 @@ import www.geekteam.xin.faceinteacher.view.XListView2;
  * Created by PC on 2018/4/20.
  */
 
-public class CourseListActivity extends Activity implements View.OnClickListener{
+public class DiandaoActivity extends Activity implements View.OnClickListener{
     TextView startTime;
     TextView endTime;
     CustomDatePicker customDatePicker1;
@@ -53,7 +46,7 @@ public class CourseListActivity extends Activity implements View.OnClickListener
     static String chooseid;
     String starttime;
     String endtime;
-
+    public String nowttime;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -64,7 +57,7 @@ public class CourseListActivity extends Activity implements View.OnClickListener
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                CourseListActivity.this.finish();
+                DiandaoActivity.this.finish();
             }
         });
         findView();
@@ -111,8 +104,7 @@ public class CourseListActivity extends Activity implements View.OnClickListener
                 Log.e("TONIGHT",":::"+endtime);
                 Log.e("TONIGHT",":::"+time);
                 Log.e("TONIGHT",":::"+chooseid);
-                new DownloadAsyncTask3(CourseListActivity.this,chooseid,time,starttime,endtime).execute();
-                Toast.makeText(CourseListActivity.this,"点到成功",Toast.LENGTH_LONG).show();
+                new DownloadAsyncTask3(DiandaoActivity.this,chooseid,time,starttime,endtime).execute();
                 break;
         }
     }

@@ -1,4 +1,4 @@
-package www.geekteam.xin.faceinteacher.getdata;
+package www.geekteam.xin.faceinteacher.Http;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -26,8 +26,8 @@ import www.geekteam.xin.faceinteacher.R;
 import www.geekteam.xin.faceinteacher.bean.Course;
 import www.geekteam.xin.faceinteacher.view.XListView;
 
-import static www.geekteam.xin.faceinteacher.MainActivity.mAdapter;
-import static www.geekteam.xin.faceinteacher.MainActivity.mListView;
+import static www.geekteam.xin.faceinteacher.Activity.MainActivity.mAdapter;
+import static www.geekteam.xin.faceinteacher.Activity.MainActivity.mListView;
 
 
 public class DownloadAsyncTask extends AsyncTask<String, Void, byte[]> implements XListView.IXListViewListener {

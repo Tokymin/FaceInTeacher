@@ -6,13 +6,13 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/logo"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".LoginActivity"
+            android:name=".Activity.LoginActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,16 +21,13 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".RegisterActivity"
+            android:name=".Activity.RegisterActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
-        <activity android:name=".MainActivity"></activity>
-        <activity
-            android:name=".Test"
-            android:label="签到详情"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
-        <activity android:name=".Sigin.CourseListActivity" />
-        <activity android:name=".Sigin.MyClenderActivity" />
-        <activity android:name=".Activity.DetailSignInActivity"></activity>
+        <activity android:name=".Activity.MainActivity" />
+        <activity android:name=".Activity.DiandaoActivity" />
+        <activity android:name=".Activity.MyClenderActivity" />
+        <activity android:name=".Activity.DetailSignInActivity" />
+        <activity android:name=".Activity.StatisticsActivity"></activity>
     </application>
 
 </manifest>

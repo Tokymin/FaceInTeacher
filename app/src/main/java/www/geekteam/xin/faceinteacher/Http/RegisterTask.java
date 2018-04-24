@@ -1,4 +1,4 @@
-package www.geekteam.xin.faceinteacher;
+package www.geekteam.xin.faceinteacher.Http;
 
 import android.os.AsyncTask;
 import android.util.Log;
@@ -12,6 +12,8 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.URL;
 import java.net.URLConnection;
+
+import www.geekteam.xin.faceinteacher.Activity.RegisterActivity;
 
 /**
  * Created by PC on 2018/4/18.

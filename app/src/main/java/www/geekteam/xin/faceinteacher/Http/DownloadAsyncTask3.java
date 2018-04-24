@@ -1,43 +1,23 @@
-package www.geekteam.xin.faceinteacher.getdata;
+package www.geekteam.xin.faceinteacher.Http;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.os.AsyncTask;
-import android.os.Handler;
 import android.util.Log;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.SimpleAdapter;
 import android.widget.Toast;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.io.ByteArrayOutputStream;
 import java.io.IOException;
-import java.io.InputStream;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Collections;
-import java.util.Comparator;
 import java.util.HashMap;
-import java.util.LinkedHashMap;
 import java.util.List;
 
 import okhttp3.FormBody;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
-import www.geekteam.xin.faceinteacher.R;
+import www.geekteam.xin.faceinteacher.Activity.DiandaoActivity;
 import www.geekteam.xin.faceinteacher.bean.Course;
-import www.geekteam.xin.faceinteacher.view.XListView;
-
-import static www.geekteam.xin.faceinteacher.MainActivity.mAdapter;
-import static www.geekteam.xin.faceinteacher.MainActivity.mListView;
 
 
 public class DownloadAsyncTask3 extends AsyncTask<String, Void, Boolean> {
@@ -142,8 +122,11 @@ public class DownloadAsyncTask3 extends AsyncTask<String, Void, Boolean> {
     @Override
     protected void onPostExecute(Boolean result) {
         super.onPostExecute(result);
+        Log.e("点到？？1","::"+result);
         if (result) {
-            Toast.makeText(context, "获取数据失败！请稍后重试...", Toast.LENGTH_SHORT).show();
+            Toast.makeText(context,"提交成功！",Toast.LENGTH_LONG).show();
+            Log.e("点到？？2","::"+result);
+
         } else {
             Toast.makeText(context, "获取数据失败！请稍后重试...", Toast.LENGTH_SHORT).show();
         }

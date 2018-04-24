@@ -1,4 +1,4 @@
-package www.geekteam.xin.faceinteacher.getdata;
+package www.geekteam.xin.faceinteacher.Http;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -25,14 +25,13 @@ import java.util.LinkedHashMap;
 import java.util.List;
 
 import www.geekteam.xin.faceinteacher.R;
-import www.geekteam.xin.faceinteacher.Sigin.CourseListActivity;
+import www.geekteam.xin.faceinteacher.Activity.DiandaoActivity;
 import www.geekteam.xin.faceinteacher.bean.Course;
-import www.geekteam.xin.faceinteacher.view.XListView;
 import www.geekteam.xin.faceinteacher.view.XListView2;
 
-import static www.geekteam.xin.faceinteacher.MainActivity.mAdapter;
-import static www.geekteam.xin.faceinteacher.MainActivity.mListView;
-import static www.geekteam.xin.faceinteacher.Sigin.CourseListActivity.mListView2;
+import static www.geekteam.xin.faceinteacher.Activity.MainActivity.mAdapter;
+import static www.geekteam.xin.faceinteacher.Activity.MainActivity.mListView;
+import static www.geekteam.xin.faceinteacher.Activity.DiandaoActivity.mListView2;
 
 
 public class DownloadAsyncTask2 extends AsyncTask<String, Void, byte[]> implements XListView2.IXListViewListener {
@@ -96,7 +95,7 @@ public class DownloadAsyncTask2 extends AsyncTask<String, Void, byte[]> implemen
 //                        TextView tv_jieci=(TextView) view.findViewById(R.id.today_jieci2);
                          time=tv_jieci.getText().toString();//总的天数
                          chooseid=tv_chooseid.getText().toString();
-                        new CourseListActivity().getdata(chooseid,time);
+                        new DiandaoActivity().getdata(chooseid,time);
                         Log.e("ITSSEcret",":::"+time+":::"+chooseid);
                     }
                 });
